@@ -1,0 +1,46 @@
+using System;
+
+namespace CSharpProject
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("What is your name?: ");
+            string name = Console.ReadLine();
+            Console.WriteLine($"Your name is: {name}.");
+            Console.WriteLine("Enter 3 numbers to multiply: ");
+            Console.WriteLine("Enter the first number to multiply: ");
+            int numOne = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the second number to multiply: ");
+            int numTwo = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the third number to multiply: ");
+            int numThree = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Result: {numOne} * {numTwo} * {numThree} = {Multiply(numOne, numTwo, numThree)}");
+
+            Console.Write("Enter the number for the nultiplication table: ");
+            int table = Convert.ToInt32(Console.ReadLine());
+            MultiplicationTable(table);
+            
+        }
+
+        static int Multiply(int a, int b, int c)
+        {
+            int result;
+            result = a * b * c;
+            return result;
+        }
+
+        static void MultiplicationTable (int tableNum)
+        {
+            Console.WriteLine($"Below is the multiplication table of {tableNum}: ");
+            double tableNumResult;
+            for(int i = 0; i<11; i++)
+            {
+                Console.Write($"{tableNum} * {i} = ");
+                tableNumResult = tableNum * i;
+                Console.WriteLine(tableNumResult);
+            }
+        }
+    }
+}
